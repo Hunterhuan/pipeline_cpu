@@ -1,0 +1,17 @@
+module pipemem ( mwmem,malu,mb,clock,mem_clock,mmo );
+ 
+   input  [31:0]  malu,mb;
+   input  mwmem,clock,mem_clock;
+   
+   input          we, clock,mem_clk;
+   output [31:0]  mmo;
+   
+   wire           dmem_clk;    
+   wire           write_enable; 
+   assign         write_enable = mwmem & ~clock; 
+   
+   assign         dmem_clk = mem_clk & ( ~ clock) ; 
+   
+   lpm_ram_dq_dram  dram(malu[6:2],dmem_clk,mb,write_enable,mmo);
+
+endmodule 

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="pipelined_computer">
+		<CBX_INST_ENTRY INSTANCE_NAME="|pipelined_computer|pipeif:if_stage|lpm_rom_irom:irom|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_2ci1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pipelined_computer|pipemem:mem_stage|lpm_ram_dq_dram:dram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_fql1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pipelined_computer|sc_display:show|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_ibm.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

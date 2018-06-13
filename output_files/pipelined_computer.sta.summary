@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'mem_clock'
+Slack : -51.579
+TNS   : -642.538
+
+Type  : Slow 1100mV 85C Model Setup 'clock'
+Slack : -13.715
+TNS   : -6710.097
+
+Type  : Slow 1100mV 85C Model Setup 'pipeemreg:em_reg|malu[2]'
+Slack : -11.058
+TNS   : -39.599
+
+Type  : Slow 1100mV 85C Model Hold 'mem_clock'
+Slack : -6.902
+TNS   : -903.513
+
+Type  : Slow 1100mV 85C Model Hold 'clock'
+Slack : -3.791
+TNS   : -396.033
+
+Type  : Slow 1100mV 85C Model Hold 'pipeemreg:em_reg|malu[2]'
+Slack : -1.050
+TNS   : -3.306
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -2.174
+TNS   : -947.703
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'mem_clock'
+Slack : -2.174
+TNS   : -271.397
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pipeemreg:em_reg|malu[2]'
+Slack : 0.383
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'mem_clock'
+Slack : -54.011
+TNS   : -664.043
+
+Type  : Slow 1100mV 0C Model Setup 'clock'
+Slack : -13.456
+TNS   : -6672.972
+
+Type  : Slow 1100mV 0C Model Setup 'pipeemreg:em_reg|malu[2]'
+Slack : -10.843
+TNS   : -38.775
+
+Type  : Slow 1100mV 0C Model Hold 'mem_clock'
+Slack : -6.831
+TNS   : -885.101
+
+Type  : Slow 1100mV 0C Model Hold 'clock'
+Slack : -3.758
+TNS   : -402.155
+
+Type  : Slow 1100mV 0C Model Hold 'pipeemreg:em_reg|malu[2]'
+Slack : -1.035
+TNS   : -3.453
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -2.174
+TNS   : -949.917
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'mem_clock'
+Slack : -2.174
+TNS   : -273.407
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pipeemreg:em_reg|malu[2]'
+Slack : 0.390
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'mem_clock'
+Slack : -25.055
+TNS   : -318.930
+
+Type  : Fast 1100mV 85C Model Setup 'clock'
+Slack : -7.735
+TNS   : -3764.541
+
+Type  : Fast 1100mV 85C Model Setup 'pipeemreg:em_reg|malu[2]'
+Slack : -5.928
+TNS   : -20.485
+
+Type  : Fast 1100mV 85C Model Hold 'mem_clock'
+Slack : -3.714
+TNS   : -488.704
+
+Type  : Fast 1100mV 85C Model Hold 'clock'
+Slack : -2.219
+TNS   : -188.621
+
+Type  : Fast 1100mV 85C Model Hold 'pipeemreg:em_reg|malu[2]'
+Slack : -0.547
+TNS   : -1.576
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'mem_clock'
+Slack : -2.174
+TNS   : -255.484
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -2.174
+TNS   : -142.281
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pipeemreg:em_reg|malu[2]'
+Slack : 0.444
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'mem_clock'
+Slack : -24.199
+TNS   : -303.135
+
+Type  : Fast 1100mV 0C Model Setup 'clock'
+Slack : -7.243
+TNS   : -3452.215
+
+Type  : Fast 1100mV 0C Model Setup 'pipeemreg:em_reg|malu[2]'
+Slack : -5.574
+TNS   : -19.358
+
+Type  : Fast 1100mV 0C Model Hold 'mem_clock'
+Slack : -3.678
+TNS   : -478.904
+
+Type  : Fast 1100mV 0C Model Hold 'clock'
+Slack : -2.221
+TNS   : -203.365
+
+Type  : Fast 1100mV 0C Model Hold 'pipeemreg:em_reg|malu[2]'
+Slack : -0.504
+TNS   : -1.518
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'mem_clock'
+Slack : -2.174
+TNS   : -253.617
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -2.174
+TNS   : -142.219
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pipeemreg:em_reg|malu[2]'
+Slack : 0.452
+TNS   : 0.000
+
+------------------------------------------------------------

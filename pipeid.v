@@ -80,5 +80,4 @@ module pipeid( mwreg,mrn,ern,ewreg,em2reg,mm2reg,dpc4,inst,
 	
 	mux4x32 alu_a(qa, ealu, malu, mmo, fwda, da);
 	mux4x32 alu_b(qb, ealu, malu, mmo, fwdb, db);
-	
 endmodule

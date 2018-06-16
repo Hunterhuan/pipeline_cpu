@@ -1,3 +1,10 @@
+/////////////////////////////////////////////////////////////
+//                                                         //
+// School of Software of SJTU                              //
+// anthor by Hanbing                                       //
+//                                                         //
+/////////////////////////////////////////////////////////////
+
 module pipelined_computer (resetn,mem_clock, in_port0,in_port1,in_port2,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5);
 	//定义顶层模块pipelined_computer，作为工程文件的顶层入口，如图1-1建立工程时指定。
 	input resetn, mem_clock;
@@ -5,10 +12,11 @@ module pipelined_computer (resetn,mem_clock, in_port0,in_port1,in_port2,HEX0,HEX
 	//以及一个和clock同频率但反相的mem_clock信号。mem_clock用于指令同步ROM和
 	//数据同步RAM使用，其波形需要有别于实验一。
 	//这些信号可以用作仿真验证时的输出观察信号。
-	input [3:0] in_port0,in_port1;
-	input in_port2;
 
-	output [6:0] HEX0,HEX1,HEX2,HEX3,HEX4,HEX5;
+	input [3:0] in_port0,in_port1; //两个input，input两个操作数
+	input in_port2; //input操作类型，用于beq分支指令
+	output [6:0] HEX0,HEX1,HEX2,HEX3,HEX4,HEX5; //output为LED灯的显示参数
+
 	//模块用于仿真输出的观察信号。缺省为wire型。
 	wire [31:0] bpc,jpc,npc,pc4,ins, inst;
 	//模块间互联传递数据或控制信息的信号线,均为32位宽信号。IF取指令阶段。
@@ -37,7 +45,7 @@ module pipelined_computer (resetn,mem_clock, in_port0,in_port1,in_port2,HEX0,HEX
 	
 	wire wwreg,wm2reg; // wb stage
 	//来自于MEM/WB流水线寄存器，WB阶段使用的信号。
-	
+
 	wire [31:0] pc, ealu, malu, walu;
 	
 	wire [31:0] inp0,inp1,inp2,out_port0,out_port1,out_port2;
@@ -65,7 +73,7 @@ module pipelined_computer (resetn,mem_clock, in_port0,in_port1,in_port2,HEX0,HEX
 	//IF/ID流水线寄存器模块，起承接IF阶段和ID阶段的流水任务。
 	//在clock上升沿时，将IF阶段需传递给ID阶段的信息，锁存在IF/ID流水线寄存器
 	//中，并呈现在ID阶段。
-	pipeid id_stage ( mwreg,mrn,ern,ewreg,em2reg,mm2reg,dpc4,inst,
+	pipeid id_stage (mwreg,mrn,ern,ewreg,em2reg,mm2reg,dpc4,inst,
 	wrn,wdi,ealu,malu,mmo,wwreg,clock,resetn,
 	bpc,jpc,pcsource,wpcir,dwreg,dm2reg,dwmem,daluc,
 	daluimm,da,db,dimm,drn,dshift,djal ); // ID stage
@@ -101,11 +109,13 @@ module pipelined_computer (resetn,mem_clock, in_port0,in_port1,in_port2,HEX0,HEX
 	//WB写回阶段模块。事实上，从设计原理图上可以看出，该阶段的逻辑功能部件只
 	//包含一个多路器，所以可以仅用一个多路器的实例即可实现该部分。
 	//当然，如果专门写一个完整的模块也是很好的。
-	
+
+	//display module， 将输出的数字转化为LED的参数
 	sc_display show(mem_clock, out_port0, out_port1, out_port2, HEX0,HEX1,HEX2,HEX3,HEX4,HEX5);
 	
 endmodule
 
+//将input拓展为32位数据
 module extend(clk,in_port, inp);
 
 	input clk;
@@ -118,7 +128,7 @@ module extend(clk,in_port, inp);
 
 endmodule
 
-
+//display module， 将输出的数字转化为LED的参数
 module sc_display(clock, out_port0, out_port1, out_port2, hex0,hex1,hex2,hex3,hex4,hex5);
 input clock;
 input [31:0] out_port0, out_port1,out_port2;
@@ -152,6 +162,7 @@ begin
 	num4 = out_port2/10;
 	num5 = out_port2 - num4*10;
 end
+//调用LED显示
 sevenseg display_0_high (num0, hex0);
 sevenseg display_0_low (num1, hex1);
 sevenseg display_1_high (num2, hex4);
